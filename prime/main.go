@@ -1,4 +1,4 @@
-package Qlue_ID_tech_test_backend
+package prime
 
 import "fmt"
 
