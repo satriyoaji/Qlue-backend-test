@@ -2,14 +2,14 @@ package Qlue_ID_tech_test_backend
 
 import "fmt"
 
-func checkPrime(n int) (primes []int) {
-	b := make([]bool, n)
-	for i := 2; i < n; i++ {
+func checkPrime(N int) (primes []int) {
+	b := make([]bool, N)
+	for i := 2; i < N; i++ {
 		if b[i] == true {
 			continue
 		}
 		primes = append(primes, i)
-		for k := i * i; k < n; k += i {
+		for k := i * i; k < N; k += i {
 			b[k] = true
 		}
 	}
@@ -17,8 +17,15 @@ func checkPrime(n int) (primes []int) {
 }
 
 func main() {
+	var n int
+	fmt.Print("input n: ")
+	_, err := fmt.Scan(&n)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+
 	primesArray := []int{}
-	primes := checkPrime(7)
+	primes := checkPrime(n)
 	for _, p := range primes {
 		primesArray = append(primesArray, p)
 	}
