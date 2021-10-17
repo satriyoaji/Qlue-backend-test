@@ -1,0 +1,4 @@
+SELECT *
+FROM assessments
+WHERE score > 0 AND
+	CAST(date AS DATE) BETWEEN '2011-01-01' AND '2011-06-30';
